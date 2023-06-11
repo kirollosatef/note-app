@@ -20,8 +20,12 @@ app.set("view engine", "ejs");
 
 // Routes
 app.use("/", (req, res) => {
-  res.render("index");
+  const locals = {
+    title: "Home",
+    description: "This is the home page",
+  }
+  res.render("index", locals);
 });
 
 // Listen on port 3000
-app.listen(port, () => console.info(`Listening on port ${port}`));
+app.listen(port, () => console.info(`Listening on port ${port} \nhttp://localhost:${port}`));
