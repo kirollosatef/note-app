@@ -19,13 +19,13 @@ app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
 
 // Routes
-app.use("/", (req, res) => {
-  const locals = {
-    title: "Home",
-    description: "This is the home page",
-  }
-  res.render("index", locals);
+app.use("/", require("./server/routes/index"));
+// handle 404
+app.get("*", (req, res) => {
+  res.status(404).render("404");
 });
 
 // Listen on port 3000
-app.listen(port, () => console.info(`Listening on port ${port} \nhttp://localhost:${port}`));
+app.listen(port, () =>
+  console.info(`Listening on port ${port} \nhttp://localhost:${port}`)
+);
