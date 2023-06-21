@@ -64,7 +64,7 @@ passport.serializeUser((user, done) => {
 // presist user data from session.
 passport.deserializeUser((id, done) => {
   User.findById(id).then((user) => {
-    done(err, user);
+    done(null, user);
   });
 });
 

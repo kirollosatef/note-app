@@ -6,6 +6,7 @@ const connectDB = require("./server/config/db");
 const session = require("express-session");
 const passport = require("passport");
 const MongoStore = require("connect-mongo");
+const methodOverride = require("method-override");
 
 // Init app
 const app = express();

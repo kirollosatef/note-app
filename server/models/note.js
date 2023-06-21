@@ -7,20 +7,20 @@ const noteSchema = new Schema({
     ref: "User",
   },
   title: {
-    tpye: String,
+    type: String,
     required: true,
   },
   body: {
-    tpye: String,
+    type: String,
     required: true,
   },
   createdAt: {
-    tpye: String,
-    required: true,
+    type: Date,
+    default: Date.now(),
   },
   updatedAt: {
-    tpye: String,
-    required: true,
+    type: Date,
+    default: Date.now(),
   },
 });
 
